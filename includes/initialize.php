@@ -13,7 +13,7 @@
 	//(\ for windows, / for Unix)
 	defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 	
-	defined('SITE_ROOT') ? null : define ('SITE_ROOT', $_SERVER['DOCUMENT_ROOT'].DS.'ucb');
+	defined('SITE_ROOT') ? null : define ('SITE_ROOT', $_SERVER['DOCUMENT_ROOT'].DS.'pmmsdb');
 	
 	defined('LIB_PATH') ? null : define ('LIB_PATH',SITE_ROOT.DS.'includes');
 	
@@ -24,17 +24,7 @@
 	//later here where we are going to put our class session
 	require_once(LIB_PATH.DS."session.php");
 	require_once(LIB_PATH.DS."member.php");
-	require_once(LIB_PATH.DS."consultant.php");
-	require_once(LIB_PATH.DS."consultant_project .php");
-	require_once(LIB_PATH.DS."department.php");
-	require_once(LIB_PATH.DS."school.php");
-	require_once(LIB_PATH.DS."project.php");
-	require_once(LIB_PATH.DS."sector.php");
-	require_once(LIB_PATH.DS."domain.php");
-	require_once(LIB_PATH.DS."client.php");
-	require_once(LIB_PATH.DS."payment.php");
-	require_once(LIB_PATH.DS."client_project.php");
-	require_once(LIB_PATH.DS."instructorclasses.php");
+
 	
 	//Load Core objects
 	require_once(LIB_PATH.DS."database.php");
