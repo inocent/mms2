@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `room` (
 	`room_building_id` int(11) unsigned NOT NULL,
 	`created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
 	`updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-	PRIMARY KEY (`room_id`)
+	PRIMARY KEY (`room_id`),
 	CONSTRAINT `FK_room_building_id` FOREIGN KEY (`room_building_id`) REFERENCES `building` (`building_id`),
 	INDEX `index_room_building_id` (`room_building_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -183,9 +183,9 @@ CREATE TABLE IF NOT EXISTS `furniture` (
 	`brand` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
 	`created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
 	`updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-	PRIMARY KEY (`lab_equip_id`),
+	PRIMARY KEY (`furniture_id`),
 	CONSTRAINT `FK_furniture_room_id` FOREIGN KEY (`furniture_room_id`) REFERENCES `room` (`room_id`),
-	INDEX `index_furniture_room_id` (`furniture_room_id`),
+	INDEX `index_furniture_room_id` (`furniture_room_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
@@ -198,5 +198,5 @@ CREATE TABLE IF NOT EXISTS `software` (
 	`updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
 	PRIMARY KEY (`software_id`),
 	CONSTRAINT `FK_software_depart_id` FOREIGN KEY (`software_depart_id`) REFERENCES `department` (`department_id`),
-	INDEX `index_software_depart_id` (`software_depart_id`),
+	INDEX `index_software_depart_id` (`software_depart_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
